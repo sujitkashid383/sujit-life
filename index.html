@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Love Test</title>
+    <style>
+      #popup {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #popup h2 {
+        color: white;
+        font-size: 24px;
+      }
+
+      #popup button {
+        padding: 10px 20px;
+        margin: 10px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+
+      #popup button:hover {
+        background-color: #3e8e41;
+      }
+
+      #main-content {
+        text-align: center;
+      }
+      body {
+        background-image: url("./public/bg-love.jpg");
+        color: white;
+        background-position: right;
+        background-size: cover;
+        opacity: 1;
+      }
+
+      .animated-love {
+        font-size: 50px;
+        animation: fadeIn 5s;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      .image-container {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 50px;
+      }
+
+      img {
+        width: 25%;
+        border-radius: 50%;
+        border: 5px solid #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      }
+
+      @keyframes slideRight {
+        0% {
+          left: 38%;
+        }
+        100% {
+          left: 45%;
+        }
+      }
+      @media (min-width: 370px) {
+        img {
+          width: 25%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="popup">
+      <h2>Do you love me?</h2>
+      <button id="yes">Yes</button>
+      <button id="no">No</button>
+    </div>
+
+    <div class="container">
+      <div id="main-content" style="display: none">
+        <h1 class="animated-love">Thanks for coming into my life🎯❤️</h1>
+        <div class="image-container">
+          <img src="./public/Image1.jpg" alt="sujit" />
+          <img
+            class="animate__animated animate__bounceOutRight"
+            src="./public/heart.jpg"
+            title="This heart is for you me"
+            alt="love"
+            style="
+              width: 50px;
+              height: 50px;
+              justify-content: center;
+              align-self: center;
+            "
+          />
+          <img src="./public/Image2.jpg" alt="suji" />
+        </div>
+        <h2 style="width: auto">
+          "I am yearning for the day when I can call you my pious wife, united
+          in the most beautiful and halal way. Until then, my heart prays for
+          the moment we can walk this path together, guided by faith and love."
+        </h2>
+        <hr />
+        <h3 style="width: auto">
+          Separated by distance, but always united by heart. No matter how many
+          miles lie between us, our love knows no boundaries
+        </h3>
+        <audio class="myAudio" autoplay controls>
+          <source src="./public/Zara_Sa.mp3" type="audio/mpeg" />
+        </audio>
+      </div>
+    </div>
+
+    <script>
+      const popup = document.getElementById("popup");
+      const mainContent = document.getElementById("main-content");
+      const yesButton = document.getElementById("yes");
+      const noButton = document.getElementById("no");
+
+      noButton.addEventListener("click", () => {
+        alert("No, You're lying! Google knows that you love me.");
+      });
+
+      yesButton.addEventListener("click", () => {
+        popup.style.display = "none";
+        mainContent.style.display = "block";
+      });
+
+      document.getElementById("yes").addEventListener("click", function () {
+        const audio = document.querySelector(".myAudio");
+        audio.play();
+      });
+    </script>
+  </body>
+</html>
